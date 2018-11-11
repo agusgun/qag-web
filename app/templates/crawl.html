@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1> Twitter Crawler </h1>
+	<form action="" method="post">
+		{{ form.hidden_tag() }}
+		{{ form.username.label }} <br>
+		{{ form.username(size=32)}}
+		{% for error in form.username.errors %}
+		<span style="color:red; "> {{error}} </span>
+		{% endfor %}
+		{{ form.submit() }}
+
+		{% if results %}
+		{% for result in results %}
+		<p> GOTCHA </p>
+		<h3> {{result["created_at"]}}</h3>
+		<p> {{result["text"].encode("ascii", "ignore")}}</p>
+		{% endfor %}
+		{% endif %}
+	</form>
+{% endblock %}
