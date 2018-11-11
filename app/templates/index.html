@@ -1,10 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<h1> Hello, {{user.username}}! </h1>
-	{% for post in posts %}
-	<div>
-		<p> {{post.author.username}} says: <b> {{post.body}} </b> </p>
-	</div>
-	{% endfor %}
+    <div class="jumbotron text-center">
+        <h1 class="qag-title">Automatic Question-Answer Pairs Generation from Text</h1>
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+                <h3 class="qag-passage-label text-lowercase">{{ form.passage.label }}</h3>
+                <div>{{ form.passage(class_="qag-passage-input", rows=10, cols=100, placeholder="Please fill me :)") }}</div>
+                {% for error in form.passage.errors %}
+                    <p style="color: red;"> {{ error }} </p>
+                {% endfor %}
+            <p> {{ form.submit(class_="qag-passage-label qag-passage-button text-lowercase btn") }} </p>
+        </form>
+    </div>
 {% endblock %}

@@ -1,24 +1,18 @@
 from app import app
-from flask import render_template, flash, redirect
-from app.forms import LoginForm, CrawlForm
+from flask import render_template, flash, redirect, url_for
+from app.forms import LoginForm, CrawlForm, PassageForm
 from .crawler import TwitterAPI
 
 @app.route('/')
 
-@app.route('/index')
+@app.route('/index', methods=['GET', 'POST'])
 def index():
-	user = {'username': 'Agus'}
-	posts = [
-		{
-			'author': {'username': 'John'},
-			'body': 'Beautiful day in portland'
-		},
-		{
-			'author': {'username': 'Susan'},
-			'body': 'The Avengers movie was so cool!'
-		}
-	]
-	return render_template('index.html', title='Home', user=user, posts=posts)
+	user = {'username': 'World'}
+	form = PassageForm()
+	if form.validate_on_submit():
+		flash('Passage {} requested'.format(form.passage.data))
+		return redirect(url_for('index'))
+	return render_template('index.html', title='Home', user=user, form=form)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

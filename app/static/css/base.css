@@ -1,0 +1,44 @@
+.jumbotron {
+    background: #ffffff;
+    font-family: "Open Sans";
+}
+
+.qag-title {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+
+.qag-passage-label {
+    font-family: Raleway;
+    letter-spacing: 0.5em;
+}
+
+.qag-passage-input {
+    border: 0.2em solid #333333;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+textarea:focus {
+    outline: none;
+    border: 0.2em solid black;
+    background: honeydew;
+}
+
+.qag-passage-button {
+    margin: 1em;
+    padding: 1em;
+    border-radius: 1em;
+    width: 40em;
+    font-size: 1em;
+    font-weight: bold;
+    background: #333333;
+    color: white;
+}
+
+.qag-passage-button:hover {
+    background: black;
+    color: white;
+}

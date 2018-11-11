@@ -1,20 +1,18 @@
 <html>
-	<head> 
+	<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'  type='text/css'>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 		{% if title%}
-		<title>	{{title}} - DS Aelvyn </title>
+		<title>	{{title}} - QAG </title>
 		{% else %}
-		<title> Welcome to Our Homepage </title>
+		<title> QAG </title>
 		{% endif %}
 	</head>
 	<body>
-		<div> 
-			DS Aelvyn: 
-			<a href="{{ url_for('index') }}"> Home </a>
-			<a href="{{ url_for('login') }}"> Login </a>
-			<a href="{{ url_for('twittercrawl') }}"> Crawl </a>
-		</div>
-		<hr>
-		{% with messages = get_flashed_messages() %}
+		{% block content %}
+		{% endblock %}
+        {% with messages = get_flashed_messages() %}
 		{% if messages %}
 		<ul>
 			{% for message in messages %}
@@ -23,7 +21,5 @@
 		</ul>
 		{% endif %}
 		{% endwith %}
-		{% block content %}
-		{% endblock %}
 	</body>
 </html>
