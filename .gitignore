@@ -2,3 +2,5 @@
 venv
 *.pyc
 build
+*/stanford-parser-3.9.2-models.jar
+*/workspace.xml

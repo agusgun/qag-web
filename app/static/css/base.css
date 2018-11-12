@@ -4,10 +4,10 @@
 }
 
 .qag-title {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-    padding-bottom: 0.5em;
-    padding-top: 0.5em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
 }
 
 .qag-passage-label {
@@ -41,4 +41,79 @@ textarea:focus {
 .qag-passage-button:hover {
     background: black;
     color: white;
+}
+
+.qag-passage-button:focus {
+    background: black;
+    color: white;
+    border: 0em solid transparent;
+}
+
+.qag-passage-button:active {
+    background: black;
+    color: white;
+    border: 0em solid transparent;
+}
+
+.qag-results {
+    background: black;
+    padding: 1.5em;
+    color: white;
+}
+
+.qag-passage-output {
+    background: dimgray;
+    color: white;
+}
+
+.spacing {
+    margin: 3em;
+}
+
+.qag-question {
+    border: 0.2em solid white;
+    border-radius: 1em;
+    padding: 1.5em;
+}
+
+table {
+    border: 0em solid transparent;
+    color: white;
+}
+
+td {
+    padding-right: 0.25em;
+    padding-left: 0.25em;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blank_row {
+    height: 1em !important; /* overwrites any other rules */
+    background-color: transparent;
+}
+
+span {
+    font-weight: bolder;
+    color: black;
+    font-size: 0.3em;
+    position: relative;
+    text-align: center;
+    margin: 2em;
+    display: none;
+}
+
+h1 {
+    cursor: pointer;
+}
+
+h1:hover span {
+    display: block;
+}
+
+mark {
+    background: honeydew;
 }

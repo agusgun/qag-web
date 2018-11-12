@@ -2,15 +2,53 @@
 
 {% block content %}
     <div class="jumbotron text-center">
-        <h1 class="qag-title">Automatic Question-Answer Pairs Generation from Text</h1>
+        <h1 class="qag-title">Automatic Question-Answer Pairs Generation from Text<span><mark color="black">Felix Limanta (13515065), Holy Lovenia (13515113), Agus Gunawan (13515143)</mark></span></h1>
         <form action="" method="post">
             {{ form.hidden_tag() }}
-                <h3 class="qag-passage-label text-lowercase">{{ form.passage.label }}</h3>
-                <div>{{ form.passage(class_="qag-passage-input", rows=10, cols=100, placeholder="Please fill me :)") }}</div>
-                {% for error in form.passage.errors %}
-                    <p style="color: red;"> {{ error }} </p>
-                {% endfor %}
+            <h3 class="qag-passage-label text-lowercase">{{ form.passage.label }}</h3>
+            <div>{{ form.passage(class_="qag-passage-input", rows=10, cols=100, placeholder="Please fill me :)") }}</div>
+            {% for error in form.passage.errors %}
+                <p style="color: red;"> {{ error }} </p>
+            {% endfor %}
             <p> {{ form.submit(class_="qag-passage-label qag-passage-button text-lowercase btn") }} </p>
         </form>
     </div>
+    {% if questions %}
+        <div class="container-fluid qag-passage-output text-center">
+            <h3 class="qag-passage-label text-lowercase">Passage</h3>
+            <div class="spacing">
+                {% for s in sentences %}
+                    <p>{{ s }}</p>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="container-fluid qag-results text-center">
+            <h3 class="qag-passage-label text-lowercase">Results</h3>
+            {% for q in questions %}
+                <div class="spacing qag-question">
+                    <table class="center">
+                        <tr>
+                            <td align="right">Important sentence:</td>
+                            <td>{{ q['sentence'] }}</td>
+                        </tr>
+                        <tr>
+                            <td align="right">Fill-in-the-blank:</td>
+                            <td>{{ q['question_gap'] }}</td>
+                        </tr>
+                        <tr class="blank_row">
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td align="right"><b>Question:</b></td>
+                            <td>{{ q['question_qw'] }}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><b>Answer:</b></td>
+                            <td>{{ q['answer'] }}</td>
+                        </tr>
+                    </table>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
 {% endblock %}
