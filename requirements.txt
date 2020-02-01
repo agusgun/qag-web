@@ -17,5 +17,5 @@ sklearn-crfsuite==0.3.6
 tabulate==0.8.2
 tqdm==4.28.1
 twitter==1.18.0
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 WTForms==2.1
