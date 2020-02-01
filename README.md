@@ -32,4 +32,10 @@ We propose an approach which is generally based on the framework of an ongoing w
 
 2. Source code for the web version is in [this GitHub repository](https://github.com/agusgun/qag-web).
 
+## Installation
+
+1. Export '$STANFORD_PARSER' environment variable using lib path using command `EXPORT STANFORD_PARSER=<ABSOLUTE_PATH>` e.g. `EXPORT STANFORD_PARSER=/home/anonymous/qag-web/qag/lib`
+2. Run using command `gunicorn qag:app`
+3. If the program stuck after loading the model. It's because the port already used. This happened usually after you already run the program twice or several times. Please kill the process that runs on the port using `lsof -i` find java, kill the proces PID.
+
 ![result](assets/qag-web.gif)
